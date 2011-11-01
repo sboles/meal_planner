@@ -35,3 +35,9 @@ group :test do
   gem "minitest-reporters", "0.4.0", require: false
   gem "guard-minitest",     "0.4.0"
 end
+
+group :development, :test do
+  gem "guard-livereload", "0.3.0"
+  gem "guard-coffeescript", "0.3.3"
+end
+
