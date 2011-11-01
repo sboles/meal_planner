@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  description: MyText
+  title: pork 
+  description: pork
 
 two:
-  title: MyString
-  description: MyText
+  title: bacon
+  description: 
+
+three:
+  title: spam
+  description: spam
