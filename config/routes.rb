@@ -1,4 +1,6 @@
 MealPlanner::Application.routes.draw do
+  resources :meal_plans
+
   resources :meals
 
   # The priority is based upon order of creation:
