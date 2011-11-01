@@ -31,4 +31,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
+  gem "mynyml-redgreen",    "0.7.1"
+  gem "minitest-reporters", "0.4.0", require: false
+  gem "guard-minitest",     "0.4.0"
 end
