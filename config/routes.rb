@@ -1,4 +1,6 @@
 MealPlanner::Application.routes.draw do
+  resources :meal_plan_meals
+
   resources :meal_plans
 
   resources :meals
