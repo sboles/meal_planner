@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20111102135818) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "meal_time_id"
   end
 
   create_table "tag_types", :force => true do |t|

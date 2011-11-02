@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+meal_times = TagType.new(tag_type:"meal_times")
+Tag.new(name:"lunch", tag_type:meal_times)
+Tag.new(name:"dinner", tag_type:meal_times)
