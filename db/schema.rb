@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111102013124) do
+ActiveRecord::Schema.define(:version => 20111102013935) do
 
   create_table "meal_plan_meals", :force => true do |t|
     t.text     "custom_description"
