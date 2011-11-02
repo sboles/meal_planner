@@ -10,6 +10,12 @@
   <%= @meal.description %>
 </p>
 
+<p>
+  <b>Meal Times:</b>
+  <% @meal.meal_times.each do |meal_time| %>
+    <%= meal_time.name %>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_meal_path(@meal) %> |
 <%= link_to 'Back', meals_path %>
