@@ -7,7 +7,7 @@ class TagTypeTest < ActiveSupport::TestCase
   end
 
   test "retrieve " do
-    tag_type = TagType.where(tag_type:tag_types(:one).tag_type)
+    tag_type = TagType.where(name:tag_types(:one).name)
     assert_not_nil tag_type
   end
 

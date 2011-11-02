@@ -11,38 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111102135818) do
+ActiveRecord::Schema.define(:version => 20111102153859) do
 
   create_table "meal_plan_meals", :force => true do |t|
-    t.text     "custom_description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "meal_id"
+    t.text      "custom_description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "meal_id"
   end
 
   create_table "meal_plans", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "meals", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "tag_types", :force => true do |t|
-    t.string   "tag_type"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "tag_type_id"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "tag_type_id"
   end
 
 end

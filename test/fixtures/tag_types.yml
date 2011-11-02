@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  tag_type: meal_types
+  name: meal_types
 
 two:
-  tag_type: health_tags
+  name: health_tags
 
 meal_times:
-  tag_type: meal_times
+  name: meal_times
 
