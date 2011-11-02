@@ -2,13 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-gem 'pg'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -38,7 +31,11 @@ group :test do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem "guard-livereload", "0.3.0"
   gem "guard-coffeescript", "0.3.3"
 end
 
+group :production do
+  gem 'pg'
+end
