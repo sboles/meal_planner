@@ -14,4 +14,15 @@ class TagTest < ActiveSupport::TestCase
     lunch.tag_type = meal_times
     lunch.save
   end
+  
+  test "retrieve meals by tag" do
+    lunch = tags(:lunch)
+    meals = lunch.meals
+    assert_not_nil meals
+    meal = meals(:one)
+    meal.meal_times << lunch
+    meal.save
+    meals = lunch.meals
+    assert meals.length > 0
+  end
 end
