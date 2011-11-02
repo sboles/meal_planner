@@ -7,4 +7,11 @@ class TagTest < ActiveSupport::TestCase
     lunch = Tag.where(name:lunch_fixture.name)
     dinner = Tag.where(name:dinner_fixture.name)
   end
+
+  test "add a tag type" do
+    lunch = tags(:lunch)
+    meal_times= tag_types(:meal_times)
+    lunch.tag_type = meal_times
+    lunch.save
+  end
 end

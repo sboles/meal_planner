@@ -5,3 +5,7 @@ one:
 
 two:
   tag_type: health_tags
+
+meal_times:
+  tag_type: meal_times
+

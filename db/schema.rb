@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111102134944) do
+ActiveRecord::Schema.define(:version => 20111102135818) do
 
   create_table "meal_plan_meals", :force => true do |t|
     t.text     "custom_description"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20111102134944) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tag_type_id"
   end
 
 end
