@@ -24,6 +24,7 @@ class MealsController < ApplicationController
   # GET /meals/new
   # GET /meals/new.json
   def new
+    @meal_time_tags = TagType.find_by_name("meal_times").tags
     @meal = Meal.new
 
     respond_to do |format|
@@ -34,6 +35,7 @@ class MealsController < ApplicationController
 
   # GET /meals/1/edit
   def edit
+    @meal_time_tags = TagType.find_by_name("meal_times").tags
     @meal = Meal.find(params[:id])
   end
 
@@ -57,7 +59,8 @@ class MealsController < ApplicationController
   # PUT /meals/1.json
   def update
     @meal = Meal.find(params[:id])
-
+    @meal.update_meal_times(params[:meal_times])
+    
     respond_to do |format|
       if @meal.update_attributes(params[:meal])
         format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }
