@@ -43,6 +43,7 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = Meal.new(params[:meal])
+    @meal.update_meal_times(params[:meal_times])
 
     respond_to do |format|
       if @meal.save
