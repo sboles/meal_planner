@@ -18,7 +18,7 @@ class MealTest < ActiveSupport::TestCase
   test "retrieve a meal with meal times" do
     create_meal
     lunch = tags(:lunch)
-    meals = lunch.meals
+    meals = lunch.meal_time_meals
     assert_not_nil meals
     assert meals.length > 0
     meals.each do |meal| 
