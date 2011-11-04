@@ -1,13 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   title: pork 
   description: pork
 
 two:
+  id: 2
   title: bacon
   description: 
 
 three:
+  id: 3
   title: spam
   description: spam

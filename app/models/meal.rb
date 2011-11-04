@@ -1,4 +1,8 @@
 class Meal < ActiveRecord::Base
+
+  has_many :meal_plan_meals
+  has_many :meal_plans, through: :meal_plan_meals
+
   has_many :meal_time_tags
   has_many :meal_times, through: :meal_time_tags, source: :tag 
 

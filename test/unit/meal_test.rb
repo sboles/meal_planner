@@ -36,4 +36,29 @@ class MealTest < ActiveSupport::TestCase
     meal.save
   end
 
+  test "add meal to meal plan" do 
+    add_meal_to_meal_plan
+  end
+
+  def add_meal_to_meal_plan
+    meal = meals(:one)
+    meal_plan = meal_plans(:one)
+    meal.meal_plans << meal_plan
+    meal.save
+  end
+
+  test "get meals from meal_plan" do 
+    add_meal_to_meal_plan
+    meal_plan = meal_plans(:one)
+    meals = meal_plan.meals
+    assert meals.size == 1
+  end
+
+  test "get meal_plans for meal" do 
+    add_meal_to_meal_plan
+    meal = meals(:one)
+    meal_plans = meal.meal_plans
+    assert meal_plans.size == 1
+  end
+
 end

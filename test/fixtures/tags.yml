@@ -1,7 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 lunch:
+  id: 1
   name: lunch
+  tag_type_id: 1
 
 dinner:
+  id: 2
   name: dinner
+  tag_type_id: 1
+
