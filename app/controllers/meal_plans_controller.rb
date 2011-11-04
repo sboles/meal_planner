@@ -2,7 +2,7 @@ class MealPlansController < ApplicationController
   # GET /meal_plans
   # GET /meal_plans.json
   def index
-    @meal_plans = MealPlan.all
+    @meal_plans = MealPlan.order(:starting_at)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,7 +28,8 @@ class MealPlansController < ApplicationController
   # GET /meal_plans/new.json
   def new
     @meal_plan = MealPlan.new
-    last_meal_plan = MealPlan.last
+    last_meal_plan = MealPlan.order(:starting_at).last
+
     if(last_meal_plan && last_meal_plan.starting_at)
       @meal_plan.starting_at = last_meal_plan.starting_at.next_week.monday
     else 
