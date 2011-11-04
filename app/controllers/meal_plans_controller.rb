@@ -28,7 +28,12 @@ class MealPlansController < ApplicationController
   # GET /meal_plans/new.json
   def new
     @meal_plan = MealPlan.new
-    @meal_plan.starting_at = Time.now.next_week.monday
+    last_meal_plan = MealPlan.last
+    if(last_meal_plan && last_meal_plan.starting_at)
+      @meal_plan.starting_at = last_meal_plan.starting_at.next_week.monday
+    else 
+      @meal_plan.starting_at = Time.now.next_week.monday
+    end
 
     respond_to do |format|
       format.html # new.html.erb
