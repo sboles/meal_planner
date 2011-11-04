@@ -1,4 +1,6 @@
 MealPlanner::Application.routes.draw do
+  get "welcome/index"
+
   resources :meal_plan_meals
 
   resources :meal_plans
@@ -54,7 +56,7 @@ MealPlanner::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
