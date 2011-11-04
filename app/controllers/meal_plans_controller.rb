@@ -14,6 +14,9 @@ class MealPlansController < ApplicationController
   # GET /meal_plans/1.json
   def show
     @meal_plan = MealPlan.find(params[:id])
+    @meal_plan_meals = @meal_plan.meal_plan_meals
+    @lunch_meals = @meal_plan.lunch_meals
+    @dinner_meals = @meal_plan.dinner_meals
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +44,7 @@ class MealPlansController < ApplicationController
   # POST /meal_plans.json
   def create
     @meal_plan = MealPlan.new(params[:meal_plan])
+    @meal_plan.fill_meal_plan
 
     respond_to do |format|
       if @meal_plan.save

@@ -19,6 +19,8 @@ class MealPlanMealTest < ActiveSupport::TestCase
   test "adding a meal" do
     mpm = MealPlanMeal.new
     mpm.meal = meals(:one)
+    mpm.day = "Monday"
+    mpm.meal_time = "lunch"
     mpm.save 
   end
 
