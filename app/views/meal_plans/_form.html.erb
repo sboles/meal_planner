@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :starting_at %>
+    <%= date_select :meal_plan, :starting_at %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -28,6 +28,7 @@ class MealPlansController < ApplicationController
   # GET /meal_plans/new.json
   def new
     @meal_plan = MealPlan.new
+    @meal_plan.starting_at = Time.now.next_week.monday
 
     respond_to do |format|
       format.html # new.html.erb

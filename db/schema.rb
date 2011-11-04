@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111104025532) do
+ActiveRecord::Schema.define(:version => 20111104172448) do
 
   create_table "meal_plan_meals", :force => true do |t|
     t.text     "custom_description"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20111104025532) do
   create_table "meal_plans", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "starting_at"
   end
 
   create_table "meal_time_tags", :force => true do |t|

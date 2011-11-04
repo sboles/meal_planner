@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Creation Date</th>
+    <th>Start Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +10,7 @@
 
 <% @meal_plans.each do |meal_plan| %>
   <tr>
-    <td><%= meal_plan.created_at.strftime('%Y/%m/%d')  %></td>
+    <td><%= meal_plan.starting_at.strftime('%Y/%m/%d') if meal_plan.starting_at  %></td>
     <td><%= link_to 'Show', meal_plan %></td>
     <td><%= link_to 'Edit', edit_meal_plan_path(meal_plan) %></td>
     <td><%= link_to 'Destroy', meal_plan, confirm: 'Are you sure?', method: :delete %></td>
