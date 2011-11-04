@@ -1,26 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Lunch Meals</h2>
-<% @lunch_meals.each do |meal| %>
-  <div>
-    <%= meal.day %><br />
-    <ul>
-      <li><%= meal.meal.title %></li>
-      <li><%= meal.meal.description %></li>
-    </ul>
-  </div>
-<% end %>
-
-<h2>Dinner Meals</h2>
-<% @dinner_meals.each do |meal| %>
-  <div>
-    <%= meal.day %><br />
-    <ul>
-      <li><%= meal.meal.title %></li>
-      <li><%= meal.meal.description %></li>
-    </ul>
-  </div>
-<% end %>
+<div>
+  <table>
+    <tr>
+      <td>
+        <h2>Lunch Meals</h2>
+        <% @lunch_meals.each do |meal| %>
+          <div>
+            <%= meal.day %><br />
+            <ul>
+              <li><%= meal.meal.title %></li>
+              <li><%= meal.meal.description %></li>
+            </ul>
+          </div>
+        <% end %>
+      </td>
+      <td>
+        <h2>Dinner Meals</h2>
+        <% @dinner_meals.each do |meal| %>
+          <div>
+            <%= meal.day %><br />
+            <ul>
+              <li><%= meal.meal.title %></li>
+              <li><%= meal.meal.description %></li>
+            </ul>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>
 
 <%= link_to 'Edit', edit_meal_plan_path(@meal_plan) %> |
 <%= link_to 'Back', meal_plans_path %>
