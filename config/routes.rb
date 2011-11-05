@@ -1,4 +1,9 @@
 MealPlanner::Application.routes.draw do
+
+  get "sessions", :action=>"new", :controller=>"sessions"
+  post "sessions", :action=>"create", :controller=>"sessions"
+  delete "sessions", :action=>"destroy", :controller=>"sessions"
+
   get "welcome/index"
 
   resources :meal_plan_meals
