@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: one@meals.com
+  password_digest: fa9fb8063233da2eed0d5c55e0f629b532c99717
+
+two:
+  email: two@meals.com
+  password_digest: ea9f9b6244b9e21cfd1bf89a4d30072c4648effa

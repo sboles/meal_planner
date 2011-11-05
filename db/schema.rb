@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111104172448) do
+ActiveRecord::Schema.define(:version => 20111105005551) do
 
   create_table "meal_plan_meals", :force => true do |t|
     t.text     "custom_description"
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(:version => 20111104172448) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tag_type_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
