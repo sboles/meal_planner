@@ -2,7 +2,7 @@ class MealPlansController < ApplicationController
   # GET /meal_plans
   # GET /meal_plans.json
   def index
-    @meal_plans = MealPlan.order(:starting_at)
+    @meal_plans = MealPlan.order("starting_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
