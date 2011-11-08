@@ -61,4 +61,14 @@ class MealTest < ActiveSupport::TestCase
     assert meal_plans.size == 1
   end
 
+  test "update meal_times for meal" do
+    meal = meals(:one)
+    meal.update_meal_times(tags(:dinner).name => "1")
+    assert meal.meal_times.include?(tags(:dinner)), "should have meal_time dinner"
+    meal.update_meal_times(tags(:lunch).name => "1")
+    assert meal.meal_times.include?(tags(:lunch)), "should have meal_time lunch"
+    meal.update_meal_times({})
+    meal.update_meal_times({"lunch"=>"1", "dinner"=>"1"})
+  end
+
 end

@@ -17,6 +17,12 @@ class MealPlansControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "new after a create" do
+    MealPlan.create(starting_at: Time.now.next_week.monday)
+    get :new
+    assert_response :success
+  end
+
   test "should create meal_plan" do
     assert_difference('MealPlan.count') do
       post :create, meal_plan: @meal_plan.attributes

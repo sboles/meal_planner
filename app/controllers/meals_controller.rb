@@ -61,7 +61,7 @@ class MealsController < ApplicationController
   def update
     @meal = Meal.find(params[:id])
     @meal.update_meal_times(params[:meal_times])
-    
+
     respond_to do |format|
       if @meal.update_attributes(params[:meal])
         format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }

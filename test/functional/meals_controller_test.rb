@@ -36,7 +36,7 @@ class MealsControllerTest < ActionController::TestCase
   end
 
   test "should update meal" do
-    put :update, id: @meal.to_param, meal: @meal.attributes
+    put :update, id: @meal.to_param, meal: @meal.attributes, meal_times: {"dinner" => "1"}
     assert_redirected_to meal_path(assigns(:meal))
   end
 
