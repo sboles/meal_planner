@@ -10,7 +10,12 @@ MealPlanner::Application.routes.draw do
 
   resources :meal_plans
 
-  resources :meals
+  resources :meals do 
+    member do 
+      post 'activate'
+      post 'deactivate'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

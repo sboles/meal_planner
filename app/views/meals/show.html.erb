@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <b>Active:</b>
+  <%= @meal.active %>
+</p>
+
+<p>
   <b>Meal Times:</b>
   <% @meal.meal_times.each do |meal_time| %>
     <%= meal_time.name %>

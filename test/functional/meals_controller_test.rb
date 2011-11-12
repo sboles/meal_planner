@@ -40,11 +40,24 @@ class MealsControllerTest < ActionController::TestCase
     assert_redirected_to meal_path(assigns(:meal))
   end
 
-  test "should destroy meal" do
-    assert_difference('Meal.count', -1) do
+  test "should not destroy meal" do
+    assert_raises AbstractController::ActionNotFound do
       delete :destroy, id: @meal.to_param
     end
+  end
 
+  test "should deactivate meal" do
+    assert_difference('Meal.count', 0) do
+      post :deactivate, id: @meal.to_param
+    end
     assert_redirected_to meals_path
   end
+
+  test "should activate meal" do
+    assert_difference('Meal.count', 0) do
+      post :activate, id: @meal.to_param
+    end
+    assert_redirected_to meals_path
+  end
+
 end

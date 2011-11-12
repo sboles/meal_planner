@@ -73,15 +73,30 @@ class MealsController < ApplicationController
     end
   end
 
-  # DELETE /meals/1
-  # DELETE /meals/1.json
-  def destroy
+  # POST /meals/1/deactivate
+  # POST /meals/1/deactivate.json
+  def deactivate
     @meal = Meal.find(params[:id])
-    @meal.destroy
+    @meal.active = false
+    @meal.save
 
     respond_to do |format|
       format.html { redirect_to meals_url }
       format.json { head :ok }
     end
+  end
+
+  # POST /meals/1/activate
+  # POST /meals/1/activate.json
+  def activate
+    @meal = Meal.find(params[:id])
+    @meal.active = true
+    @meal.save
+
+    respond_to do |format|
+      format.html { redirect_to meals_url }
+      format.json { head :ok }
+    end
+
   end
 end
