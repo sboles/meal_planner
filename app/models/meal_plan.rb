@@ -4,24 +4,24 @@ class MealPlan < ActiveRecord::Base
   DAYS_OF_WEEK = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
 
   def fill_meal_plan
-    fill_with_meal_time("lunch")
-    fill_with_meal_time("dinner")
+    fill_with_meal_time('lunch')
+    fill_with_meal_time('dinner')
   end
 
   def lunch_meals
-    meal_time_meals("lunch")
+    meal_time_meals('lunch')
   end
 
-  def dinner_meals 
-    meal_time_meals("dinner")
+  def dinner_meals
+    meal_time_meals('dinner')
   end
 
   private
   def fill_with_meal_time(meal_time)
     # add lunch meals
     DAYS_OF_WEEK.each do |day|
-      meal_to_add = TagType.find_by_name("meal_times").tags.find_by_name(meal_time).meal_time_meals.sample
-      meal_plan_meal = MealPlanMeal.new 
+      meal_to_add = TagType.find_by_name('meal_times').tags.find_by_name(meal_time).meal_time_meals.sample
+      meal_plan_meal = MealPlanMeal.new
       meal_plan_meal.meal = meal_to_add
       meal_plan_meal.meal_plan = self
       meal_plan_meal.meal_time = meal_time
