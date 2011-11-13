@@ -14,7 +14,6 @@ class MealPlansController < ApplicationController
   # GET /meal_plans/1.json
   def show
     @meal_plan = MealPlan.find(params[:id])
-    @meal_plan_meals = @meal_plan.meal_plan_meals
     @lunch_meals = @meal_plan.lunch_meals
     @dinner_meals = @meal_plan.dinner_meals
 

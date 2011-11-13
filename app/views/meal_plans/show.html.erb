@@ -9,8 +9,8 @@
           <div>
             <%= meal.day %><br />
             <ul>
-              <li><%= meal.meal.title %></li>
-              <li><%= meal.meal.description %></li>
+              <li><%= meal.meal.try(:title) %></li>
+              <li><%= meal.meal.try(:description) %></li>
             </ul>
           </div>
         <% end %>
@@ -21,8 +21,8 @@
           <div>
             <%= meal.day %><br />
             <ul>
-              <li><%= meal.meal.title %></li>
-              <li><%= meal.meal.description %></li>
+              <li><%= meal.meal.try(:title) %></li>
+              <li><%= meal.meal.try(:description) %></li>
             </ul>
           </div>
         <% end %>
