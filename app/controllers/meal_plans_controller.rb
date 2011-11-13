@@ -27,7 +27,7 @@ class MealPlansController < ApplicationController
   # GET /meal_plans/1/shopping_list.json
   def shopping_list
     @meal_plan = MealPlan.find(params[:id])
-    shopping_list_array = @meal_plan.meals.collect do |meal| meal.description end.join(',').split(',')
+    shopping_list_array = @meal_plan.meals.collect do |meal| meal.description end.join(',').split(',').map do |desc| desc.strip end
     @shopping_list = {}
     shopping_list_array.each do |item|
       @shopping_list[item] = @shopping_list[item].nil? ? 1 : @shopping_list[item] + 1
