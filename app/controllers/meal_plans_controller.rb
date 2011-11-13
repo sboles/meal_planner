@@ -23,6 +23,18 @@ class MealPlansController < ApplicationController
     end
   end
 
+  # GET /meal_plans/1/shopping_list
+  # GET /meal_plans/1/shopping_list.json
+  def shopping_list
+    @meal_plan = MealPlan.find(params[:id])
+    @shopping_list = @meal_plan.meals.collect do |meal| meal.description end.join(',').split(',').sort
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @meal_plan }
+    end
+  end
+
   # GET /meal_plans/new
   # GET /meal_plans/new.json
   def new

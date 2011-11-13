@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h2> Shopping List </h2>
+<div>
+  <ul>
+    <% @shopping_list.each do |item| %>
+      <li><%= item %></li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to 'Back', @meal_plan %>

@@ -8,7 +8,11 @@ MealPlanner::Application.routes.draw do
 
   resources :meal_plan_meals
 
-  resources :meal_plans
+  resources :meal_plans do
+    member do
+      get 'shopping_list'
+    end
+  end
 
   resources :meals do 
     member do 

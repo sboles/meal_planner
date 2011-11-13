@@ -36,6 +36,11 @@ class MealPlansControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should show meal_plan shopping_list" do
+    get :shopping_list, id: @meal_plan.to_param
+    assert_response :success
+  end
+
   test "should get edit" do
     get :edit, id: @meal_plan.to_param
     assert_response :success
