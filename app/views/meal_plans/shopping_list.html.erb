@@ -3,7 +3,7 @@
 <h2> Shopping List </h2>
 <div>
   <ul>
-    <% @shopping_list.keys.sort.each do |item| %>
+    <% @shopping_list.keys.sort_by do |key| key.upcase end.each do |item| %>
       <li><%= item %> <%= "(#{@shopping_list[item]})" if @shopping_list[item] > 1 %>
       </li>
     <% end %>
