@@ -1,12 +1,10 @@
 MealPlanner::Application.routes.draw do
 
-  get "sessions", :action=>"new", :controller=>"sessions"
-  post "sessions", :action=>"create", :controller=>"sessions"
-  delete "sessions", :action=>"destroy", :controller=>"sessions"
+  get 'sessions', :action=>'new', :controller=>'sessions'
+  post 'sessions', :action=>'create', :controller=>'sessions'
+  delete 'sessions', :action=>'destroy', :controller=>'sessions'
 
-  get "welcome/index"
-
-  resources :meal_plan_meals
+  get 'welcome/index'
 
   resources :meal_plans do
     member do
@@ -14,8 +12,8 @@ MealPlanner::Application.routes.draw do
     end
   end
 
-  resources :meals do 
-    member do 
+  resources :meals do
+    member do
       post 'activate'
       post 'deactivate'
     end
@@ -68,11 +66,11 @@ MealPlanner::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
 
-  # See how all your routes lay out with "rake routes"
+  # See how all your routes lay out with 'rake routes'
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
