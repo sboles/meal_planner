@@ -33,6 +33,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pg'
   gem 'sqlite3'
   gem "guard-livereload", "0.3.0"
   gem "guard-coffeescript", "0.3.3"
